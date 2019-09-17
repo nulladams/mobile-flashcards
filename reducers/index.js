@@ -6,7 +6,7 @@ import {
 } from '../actions'
 
 
-function flashcards (state={}, action) {
+export default function flashcards (state={}, action) {
     switch (action.type) {
         case RECEIVE_FLASHCARDS:
             return {
