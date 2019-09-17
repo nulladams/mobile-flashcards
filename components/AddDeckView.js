@@ -1,5 +1,15 @@
 import React, { Component } from 'react'
-import { KeyboardAvoidingView, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
+import { 
+    KeyboardAvoidingView, 
+    Text,
+    TextInput,
+    TouchableOpacity, 
+    StyleSheet,
+    Alert
+} from 'react-native'
+import { connect } from 'react-redux'
+import { addDeck } from '../actions'
+import { saveDeckTitle } from '../utils/api'
 import { white, orange, gray } from '../utils/colors'
 
 
@@ -24,6 +34,25 @@ class AddDeckView extends Component {
         }))
     }
     createDeck = () => {
+        const deck = this.state.text
+
+        if (deck === '') {
+            Alert.alert('Deck name must have a value')
+        } else {
+            this.props.dispatch(addDeck({
+                deck        
+            }))
+
+            saveDeckTitle(deck)
+
+            this.setState(() => ({
+                text: ''
+            }))
+
+            // navigate to Deck View
+        }
+
+        
 
     }
     render() {
@@ -75,4 +104,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default AddDeckView
+export default connect()(AddDeckView)
