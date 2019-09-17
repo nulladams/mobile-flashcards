@@ -29,6 +29,10 @@ class DecksListView extends Component {
             <View key={item.title} style={styles.item}>
                 <TouchableOpacity
                     style={{ alignItems: 'center', width: '100%' }}
+                    onPress={() => this.props.navigation.navigate(
+                        'DeckView',
+                        { deck: item.title }
+                    )}
                 >
                     <Text style={{ fontSize: 20 }}>{item.title}</Text>
                     <Text>{item.questions.length}  cards</Text>

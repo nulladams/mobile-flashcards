@@ -10,6 +10,7 @@ import Constants from 'expo-constants'
 import { FontAwesome } from '@expo/vector-icons'
 import AddDeckView from './components/AddDeckView'
 import DecksListView from './components/DecksListView'
+import DeckView from './components/DeckView'
 import { purple, white } from './utils/colors'
 
 const Tabs = createBottomTabNavigator({
@@ -50,6 +51,9 @@ const Tabs = createBottomTabNavigator({
 const MainNavigator = createAppContainer(createStackNavigator({
   Home: {
     screen: Tabs
+  },
+  DeckView: {
+    screen: DeckView
   }
 }))
 
