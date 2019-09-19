@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Dimensions } from 'react-native'
 import { connect } from 'react-redux'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { blue, white, orange, red, gray } from '../utils/colors'
+import { StackActions, NavigationActions } from 'react-navigation'
 
 const width = Dimensions.get('window').width
 
@@ -40,6 +41,10 @@ const DecksListBtn = (props) => {
     return (
         <TouchableOpacity
             style={[styles.deckBtn, { backgroundColor: gray }]}
+            onPress={() => props.navigation.dispatch(StackActions.reset({
+                index: 0,
+                actions: [NavigationActions.navigate({ routeName: 'Home' })]
+            }))}
         >
             <Text style={styles.btnText}>Decks List</Text>
         </TouchableOpacity>
