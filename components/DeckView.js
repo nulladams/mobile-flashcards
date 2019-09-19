@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { blue, white, orange, red, gray } from '../utils/colors'
 import { StackActions, NavigationActions } from 'react-navigation'
+import { removeDeck } from '../actions'
+import { rmDeck } from '../utils/api'
 
 const width = Dimensions.get('window').width
 
@@ -31,6 +33,7 @@ const DeleteDeckBtn = (props) => {
     return (
         <TouchableOpacity
             style={[styles.deckBtn, { backgroundColor: red }]}
+            onPress={props.onPress}
         >
             <Text style={styles.btnText}>Delete Deck</Text>
         </TouchableOpacity>
@@ -57,6 +60,21 @@ class DeckView extends Component {
         return {
             title: deck
         }
+    }
+    deleteDeck = () => {
+        const { deck } = this.props
+
+        console.log('remove deck', deck)
+
+        rmDeck(deck.title)
+            .then(() => this.props.dispatch(removeDeck({
+                deck
+            })))
+
+        this.props.navigation.dispatch(StackActions.reset({
+            index: 0,
+            actions: [NavigationActions.navigate({ routeName: 'Home' })]        
+        }))
     }
     render() {
         const { deck } = this.props
