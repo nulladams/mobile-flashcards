@@ -52,6 +52,12 @@ const DecksListBtn = (props) => {
 }
 
 class DeckView extends Component {
+    static navigationOptions = ({ navigation }) => {
+        const { deck } = navigation.state.params
+        return {
+            title: deck
+        }
+    }
     render() {
         const { deck } = this.props
         return (
