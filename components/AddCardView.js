@@ -3,8 +3,20 @@ import { View, Text, TextInput, Picker, TouchableOpacity, StyleSheet } from 'rea
 import { purple, white, gray } from '../utils/colors'
 
 
+const SubmitBtn = (props) => {
+    return (
+        <TouchableOpacity
+            style={styles.androidSubmitBtn}
+        >
+            <Text style={{ textAlign: 'center', color: white }}>Submit</Text>
+        </TouchableOpacity>
+    )
+}
 
 class AddCardView extends Component {
+    submit = () => {
+
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -30,11 +42,7 @@ class AddCardView extends Component {
                    </View>
                </View>
                <View style={styles.btnsContainer}>
-                   <TouchableOpacity
-                        style={styles.androidSubmitBtn}
-                   >
-                       <Text style={{ textAlign: 'center', color: white }}>Submit</Text>
-                   </TouchableOpacity>
+                    <SubmitBtn onPress={this.submit} />
                </View>
             </View>
         )
@@ -75,5 +83,6 @@ const styles = StyleSheet.create({
         fontSize: 15
     }
 })
+
 
 export default AddCardView
