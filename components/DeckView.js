@@ -13,6 +13,10 @@ const AddCardBtn = (props) => {
     return (
         <TouchableOpacity
             style={[styles.deckBtn, { backgroundColor: blue }]}
+            onPress={() => props.navigation.navigate(
+                'AddCardView',
+                { deck: props.deck.title }
+            )}
         >
             <Text style={styles.btnText}>Add Card</Text>
         </TouchableOpacity>
