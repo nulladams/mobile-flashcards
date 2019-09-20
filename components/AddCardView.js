@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, Picker, TouchableOpacity, StyleSheet } from 'react-native'
+import { connect }  from 'react-redux'
 import { purple, white, gray } from '../utils/colors'
 
 
@@ -84,5 +85,11 @@ const styles = StyleSheet.create({
     }
 })
 
+function mapStateToProps (state, { navigation }) {
+    const { deck } = navigation.state.params
+    return {
+        deck
+    }
+}
 
-export default AddCardView
+export default connect(mapStateToProps)(AddCardView)
