@@ -27,6 +27,10 @@ const StartQuizBtn = (props) => {
     return (
         <TouchableOpacity
             style={[styles.deckBtn, { backgroundColor: orange }]}
+            onPress={() => props.navigation.navigate(
+                'QuizView',
+                { deckTitle: props.deckTitle }
+            )}
         >
             <Text style={styles.btnText}>Start Quiz</Text>
         </TouchableOpacity>
