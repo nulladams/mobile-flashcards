@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { connect } from 'react-redux'
 import { green, red } from '../utils/colors'
 
 class QuizView extends Component {
     render() {
+        const { deck } = this.props
         return (
             <View style={{ flex: 1 }}>
                 <View style={{ flex: 1, padding: 10, fontSize: 20 }}>
@@ -72,4 +74,11 @@ const styles = StyleSheet.create({
     }
 })
 
-export default QuizView
+function mapStateToProps (state, { navigation }) {
+    const { deckTitle } = navigation.state.params
+    return {
+        deck: state[deckTitle]
+    }
+}
+
+export default connect(mapStateToProps)(QuizView)
