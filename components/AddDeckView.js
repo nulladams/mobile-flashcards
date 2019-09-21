@@ -49,10 +49,11 @@ class AddDeckView extends Component {
                 text: ''
             }))
 
-            // navigate to Deck View
-        }
-
-        
+            this.props.navigation.navigate(
+                'DeckView',
+                { deck }
+            )
+        }        
 
     }
     render() {
