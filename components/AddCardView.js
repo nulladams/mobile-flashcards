@@ -18,6 +18,11 @@ const SubmitBtn = (props) => {
 }
 
 class AddCardView extends Component {
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: 'Add Card'
+        }
+    }
     state = {
         questionText: '',
         answerText: '',
