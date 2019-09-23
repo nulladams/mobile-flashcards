@@ -22,7 +22,7 @@ export const addCardToDeck = ({ deck, question, answer, isAnswerCorrect }) => {
             const _data = JSON.parse(results)
             const data = _data
 
-            data[deck].questions.concat({
+            data[deck].questions = _data[deck].questions.concat({
                 question,
                 answer,
                 isAnswerCorrect    
