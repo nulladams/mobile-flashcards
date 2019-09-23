@@ -5,7 +5,9 @@ import {
     RECEIVE_FLASHCARDS
 } from '../actions'
 
-
+/**
+ * @description Reducers for actions related to the flashcards state
+ */
 export default function flashcards (state={}, action) {
     switch (action.type) {
         case RECEIVE_FLASHCARDS:

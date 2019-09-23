@@ -3,6 +3,9 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { green, red } from '../utils/colors'
 
+/**
+ * @description Button to submit the correct option to a given answer
+ */
 const CorrectBtn = (props) => {
     return (
         <TouchableOpacity
@@ -14,6 +17,9 @@ const CorrectBtn = (props) => {
     )
 }
 
+/**
+ * @description Button to submit the incorrect option to a given answer
+ */
 const IncorrectBtn = (props) => {
     return (
         <TouchableOpacity
@@ -25,6 +31,9 @@ const IncorrectBtn = (props) => {
     )
 }
 
+/**
+ * @description View where the user play the game
+ */
 class QuizView extends Component {
     static navigationOptions = ({ navigation }) => {
         return {

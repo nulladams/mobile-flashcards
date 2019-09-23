@@ -3,6 +3,9 @@ export const ADD_CARD = 'ADD_CARD'
 export const ADD_DECK = 'ADD_DECK'
 export const REMOVE_DECK = 'REMOVE_DECK'
 
+/**
+ * @description Actions functions to manage flashcards data stored in the redux store
+ */
 export function receiveFlashcards (flashcards) {
     return {
         type: RECEIVE_FLASHCARDS,

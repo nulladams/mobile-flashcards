@@ -5,6 +5,9 @@ import { white, gray } from '../utils/helpers'
 import { getDecks } from '../utils/api'
 import { receiveFlashcards } from '../actions'
 
+/**
+ * @description View that shows the existing decks
+ */
 class DecksListView extends Component {
     componentDidMount() {
         const { decks, dispatch } = this.props

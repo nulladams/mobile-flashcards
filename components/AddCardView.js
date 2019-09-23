@@ -5,7 +5,9 @@ import { addCard } from '../actions'
 import { addCardToDeck } from '../utils/api'
 import { purple, white, gray, red } from '../utils/colors'
 
-
+/**
+ * @description Button component to submit a new card to a deck 
+ */
 const SubmitBtn = (props) => {
     return (
         <TouchableOpacity
@@ -17,6 +19,9 @@ const SubmitBtn = (props) => {
     )
 }
 
+/**
+ * @description View where is possible to create a new card
+ */
 class AddCardView extends Component {
     static navigationOptions = ({ navigation }) => {
         return {

@@ -9,6 +9,10 @@ import { rmDeck } from '../utils/api'
 
 const width = Dimensions.get('window').width
 
+
+/**
+ * @description Button to open a view to add new cards
+ */
 const AddCardBtn = (props) => {
     return (
         <TouchableOpacity
@@ -23,6 +27,9 @@ const AddCardBtn = (props) => {
     )
 }
 
+/**
+ * @description Button to open a view and start a quiz
+ */
 const StartQuizBtn = (props) => {
     return (
         <TouchableOpacity
@@ -37,6 +44,9 @@ const StartQuizBtn = (props) => {
     )
 }
 
+/**
+ * @description Button to delete a deck from local storage
+ */
 const DeleteDeckBtn = (props) => {
     return (
         <TouchableOpacity
@@ -48,6 +58,10 @@ const DeleteDeckBtn = (props) => {
     )
 }
 
+
+/**
+ * @description Button to open a view that list the existing decks (home view)
+ */
 const DecksListBtn = (props) => {
     return (
         <TouchableOpacity
@@ -62,6 +76,9 @@ const DecksListBtn = (props) => {
     )
 }
 
+/**
+ * @description View where is possible to manage a specific deck
+ */
 class DeckView extends Component {
     static navigationOptions = ({ navigation }) => {
         const { deck } = navigation.state.params

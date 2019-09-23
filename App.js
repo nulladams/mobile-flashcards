@@ -16,6 +16,9 @@ import QuizView from './components/QuizView'
 import { purple, white } from './utils/colors'
 import { setLocalNotification } from './utils/helpers'
 
+/**
+ * @description Bottom navigator to select the list of decks or create a new deck
+ */
 const Tabs = createBottomTabNavigator({
   DecksListView: {
     screen: DecksListView,
@@ -51,6 +54,9 @@ const Tabs = createBottomTabNavigator({
   }
 })
 
+/**
+ * @description Main navigator for navigating through the app
+ */
 const MainNavigator = createAppContainer(createStackNavigator({
   Home: {
     screen: Tabs
@@ -66,6 +72,9 @@ const MainNavigator = createAppContainer(createStackNavigator({
   }
 }))
 
+/**
+ * @description Status bar
+ */
 function AppStatusBar ({ backgroundColor, ...props }) {
   return (
     <View style={{ backgroundColor, height: Constants.statusBarHeight }}>
@@ -74,6 +83,9 @@ function AppStatusBar ({ backgroundColor, ...props }) {
   )
 }
 
+/**
+ * @description Starts the app's main functions
+ */
 export default class App extends Component {
   componentDidMount() {
     setLocalNotification()

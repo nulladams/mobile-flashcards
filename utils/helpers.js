@@ -4,11 +4,17 @@ import { AsyncStorage } from 'react-native'
 
 const NOTIFICATION_KEY = 'MobileFlashcards:notification'
 
+/**
+ * @description Clear local notificaiton
+ */
 export function clearNotification () {
     return AsyncStorage.removeItem(NOTIFICATION_KEY)
         .then(Notifications.cancelAllScheduledNotificationsAsync)
 }
 
+/**
+ * @description Create a new notification
+ */
 function createNotification () {
     return {
         title: "Play mobile flashcard game!",
@@ -22,6 +28,9 @@ function createNotification () {
     }
 }
 
+/**
+ * @description Set a new local notification remebering to play the flashcard game
+ */
 export async function setLocalNotification () {
     AsyncStorage.getItem(NOTIFICATION_KEY)
         .then(JSON.parse)

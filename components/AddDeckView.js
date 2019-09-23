@@ -12,7 +12,9 @@ import { addDeck } from '../actions'
 import { saveDeckTitle } from '../utils/api'
 import { white, orange, gray } from '../utils/colors'
 
-
+/**
+ *@description Button component to submit data to create a new deck
+ */
 const CreateDeckBtn = (props) => {
     return (
         <TouchableOpacity
@@ -24,6 +26,9 @@ const CreateDeckBtn = (props) => {
     )
 }
 
+/**
+ * @description View where is possible to create a new deck
+ */
 class AddDeckView extends Component {
     state = {
         text: ''
