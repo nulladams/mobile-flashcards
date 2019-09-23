@@ -14,6 +14,7 @@ import DeckView from './components/DeckView'
 import AddCardView from './components/AddCardView'
 import QuizView from './components/QuizView'
 import { purple, white } from './utils/colors'
+import { setLocalNotification } from './utils/helpers'
 
 const Tabs = createBottomTabNavigator({
   DecksListView: {
@@ -74,6 +75,9 @@ function AppStatusBar ({ backgroundColor, ...props }) {
 }
 
 export default class App extends Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
   render() {
     return (
       <Provider store={createStore(reducer)}>
